@@ -3,6 +3,16 @@ services:
 
   vlmcsd:
     build: .
+    image: kmzs123/vlmcsd
     ports:
       - "1688:1688"
     restart: always
+    hostname: vlmcsd
+    container_name: vlmcsd
+    network_mode: bridge
+    networks:
+      - public
+
+networks:
+  public:
+    external: true
